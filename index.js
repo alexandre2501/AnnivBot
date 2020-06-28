@@ -2,6 +2,7 @@ const Discord = require('discord.js')
 const mongoose = require('mongoose');
 const bot = new Discord.Client()
 const birthdayCtrl = require('./controllers/birthday');
+const birthdayChannelCtrl = require('./controllers/birthdayChannel');
 const env = require('./.env');
 
 //MIDLLEWARE
@@ -55,6 +56,10 @@ bot.on('message', function(message){
             if(checkCommandParam.guard(message, messageSplit, 4) && checkDate.guard(message, messageSplit[3])){
                 birthdayCtrl.modifyBirthday(message, messageSplit[2], messageSplit[3]);
             }
+        }
+        else if(messageSplit[1] === 'channel'){
+            birthdayChannelCtrl.register(message);
+            //birthdayChannelCtrl.dump(message);
         }
         //Route help
         else if(messageSplit[1] === 'help'){
