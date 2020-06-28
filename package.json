@@ -1,0 +1,17 @@
+{
+  "name": "ezquizzbot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "jimp": "^0.13.0",
+    "mongoose": "^5.9.20"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
