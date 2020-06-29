@@ -10,8 +10,8 @@ exports.Time = {
         this.Time.hourTillMidnight = 24 - this.Time.now.getHours();
         this.Time.midnight.getTime();
         this.Time.midnight.setHours(24);
-        this.Time.midnight.setMinutes(01);
-        this.Time.midnight.setSeconds(00);
+        this.Time.midnight.setMinutes(1);
+        this.Time.midnight.setSeconds(0);
     }
 }
 
