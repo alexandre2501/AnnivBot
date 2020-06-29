@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bot = new Discord.Client()
 const birthdayCtrl = require('./controllers/birthday');
 const birthdayChannelCtrl = require('./controllers/birthdayChannel');
+const birthdayTimerCtrl = require('./controllers/birthdayTimer')
 const env = require('./.env');
 
 //MIDLLEWARE
@@ -15,8 +16,9 @@ mongoose.connect(env.mongoDbLogin() ,
     .then(() => console.log('Connexion à MongoDB réussie !'))
     .catch(() => console.log('Connexion à MongoDB échouée !'));
 
-    bot.on('ready', function () {
+bot.on('ready', function () {
     console.log("Je suis connecté !")
+    birthdayTimerCtrl.dailyTimer(bot);
 });
 
 bot.on('message', function(message){
@@ -67,14 +69,15 @@ bot.on('message', function(message){
                 'Voici les commandes disponibles \n ' +
                 '!annivBot help : Affiche les commandes disponibles \n ' +
                 '!annivBot ajout [pseudo] [jour/mois] : Ajoute [pseudo] à la liste d\'anniversaire \n ' +
+                '!annivBot channel : Permet d\'associer le canal en question au bot afin de souhaiter un bon anniversaire.' +
                 '!annivBot modifier [pseudo] [jour/mois] : Modifie l\'anniversaire de [pseudo] \n' +
                 '!annivBot listeTous : Liste tous les annivresaires du serveur \n' +
                 '!annivBot liste [pseudo] : Liste l\'anniversaire de [pseudo] \n' +
                 '!annivBot supprimer [pseudo] : Supprime [pseudo] de la liste d\'anniversaire \n');
         }
         else if(messageSplit[1] === 'dump'){
-            message.reply(message.channel.guild.id);
-            message.reply(message.channel.guild.name);
+            message.reply(message.guild.roles);
+            //birthdayTimerCtrl.dailyTimer();
         }
         else{
             message.reply('Je ne connais pas cette commande, écris "!annivBot help" afin d\'avoir de l\'aide ');

@@ -1,7 +1,6 @@
 exports.guard = (message, date) => {
     if(date.indexOf('/') != -1){
         const dateSplit = date.split('/');
-        console.log(dateSplit.length);
         if(dateSplit.length === 2){
             if(parseInt(dateSplit[0]) != NaN || parseInt(dateSplit[1] != NaN)){
                 if(parseInt(dateSplit[0]) > 0 && parseInt(dateSplit[0]) < 32 && parseInt(dateSplit[1]) > 0 && parseInt(dateSplit[1]) < 13){

@@ -1,7 +1,11 @@
 const Birthday = require('../models/Birthday');
+const birthdayChannelCtrl = require('../controllers/birthdayChannel');
+
+const normalizeDate = require('../middleware/normalizeDate');
 
 exports.createBirthday = (message, pseudo, date) => {
     //delete req.body._id;
+    date = normalizeDate.normalize(date);
     const birthday = new Birthday({
         userId: message.author.id,
         serverId: message.channel.guild.id,
@@ -14,6 +18,7 @@ exports.createBirthday = (message, pseudo, date) => {
 }
 
 exports.modifyBirthday = (message, pseudo, date) => {
+    date = normalizeDate.normalize(date);
     Birthday.updateOne({ serverId: message.channel.guild.id, pseudo: pseudo}, {date: date})
         .then(birthday => {message.reply('L\'anniversaire de ' + pseudo + ' à été changé !')})
         .catch(error => {message.reply('Une erreur est survenue')})
@@ -61,4 +66,16 @@ exports.listAllBirthday = (message) => {
             message.reply(str);
         })
         .catch(error => {message.reply('Une erreur est survenue')})
+}
+
+exports.listTodayServerBirthday = (bot, serverId, date, channel) => {
+    Birthday.find({serverId: serverId, date: date})
+        .then(birthdays => {
+            for(birthday of birthdays){
+                if(channel != false){
+                    bot.guilds.cache.get(serverId).channels.cache.get(channel).send('@everyone Aujourd\'hui est l\'anniversaire de ' + birthday.pseudo + ' ! Bon anniversaire !');
+                }
+            }
+        })
+        .catch(error => {console.log(error)})
 }
