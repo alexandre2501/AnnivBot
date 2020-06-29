@@ -36,7 +36,7 @@ exports.getRegisteredChannel = (bot, serverId, date) => {
                 birthdayCtrl.listTodayServerBirthday(bot, serverId, date, false)
             }
         })
-        .catch()
+        .catch(error => {console.log(error)})
 }
 
 exports.dump = (message) => {

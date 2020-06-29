@@ -5,8 +5,8 @@ exports.Time = {
     midnight: null,
     hourTillMidnight: null,
     updateDate: () => {
-        this.Time.now = new Date(Date.now());
-        this.Time.midnight = new Date(Date.now());
+        this.Time.now = new Date();
+        this.Time.midnight = new Date();
         this.Time.hourTillMidnight = 24 - this.Time.now.getHours();
         this.Time.midnight.getTime();
         this.Time.midnight.setHours(24);
@@ -24,10 +24,8 @@ exports.dailyTimer = (bot) => {
     let serversId = bot.guilds.cache.keyArray();
 
     const timestampTillMidnight = this.Time.midnight.getTime() - this.Time.now.getTime();
-    console.log(timestampTillMidnight)
     let month = this.Time.midnight.getMonth() + 1
     let dateStr = this.Time.midnight.getDate() + '/' + month;
-    console.log(dateStr);
     var self = this
     setTimeout(function(){
         for(index in serversId){

@@ -75,6 +75,9 @@ exports.listTodayServerBirthday = (bot, serverId, date, channel) => {
                 if(channel != false){
                     bot.guilds.cache.get(serverId).channels.cache.get(channel).send('@everyone Aujourd\'hui est l\'anniversaire de ' + birthday.pseudo + ' ! Bon anniversaire !');
                 }
+                else{
+                    bot.guilds.cache.get(serverId).channels.cache.find(channel => channel.type === 'text').send('@everyone Aujourd\'hui est l\'anniversaire de ' + birthday.pseudo + ' ! Bon anniversaire !');
+                }
             }
         })
         .catch(error => {console.log(error)})
