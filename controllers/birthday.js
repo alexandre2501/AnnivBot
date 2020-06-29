@@ -13,7 +13,7 @@ exports.createBirthday = (message, pseudo, date) => {
         date: date,
     });
     birthday.save()
-        .then(() => {message.reply('L\'anniversaire de ' + pseudo + ' a bien été ajouté pour le ' + date)})
+        .then(() => {message.reply('L\'anniversaire de ' + pseudo + ' a bien été ajouté pour le ' + date + '.')})
         .catch(error => {console.log('erreur')});
 }
 
@@ -41,7 +41,7 @@ exports.deleteBirthday = (message, pseudo) => {
 
 exports.listOneBirthday = (message, pseudo) => {
     Birthday.findOne({ serverId: message.channel.guild.id, pseudo: pseudo})
-        .then(birthday => {message.reply('L\'anniversaire de cet utilisateur est le ' + birthday.date)})
+        .then(birthday => {message.reply('L\'anniversaire de cet utilisateur est le ' + birthday.date + '.')})
         .catch(error => {
             Birthday.countDocuments({serverId: message.channel.guild.id, pseudo: pseudo})
                 .then(count => {
@@ -73,10 +73,10 @@ exports.listTodayServerBirthday = (bot, serverId, date, channel) => {
         .then(birthdays => {
             for(birthday of birthdays){
                 if(channel != false){
-                    bot.guilds.cache.get(serverId).channels.cache.get(channel).send('@everyone Aujourd\'hui est l\'anniversaire de ' + birthday.pseudo + ' ! Bon anniversaire !');
+                    bot.guilds.cache.get(serverId).channels.cache.get(channel).send('@everyone Aujourd\'hui c\'est l\'anniversaire de ' + birthday.pseudo + ' ! Bon anniversaire !');
                 }
                 else{
-                    bot.guilds.cache.get(serverId).channels.cache.find(channel => channel.type === 'text').send('@everyone Aujourd\'hui est l\'anniversaire de ' + birthday.pseudo + ' ! Bon anniversaire !');
+                    bot.guilds.cache.get(serverId).channels.cache.find(channel => channel.type === 'text').send('@everyone Aujourd\'hui c\'est l\'anniversaire de ' + birthday.pseudo + ' ! Bon anniversaire !');
                 }
             }
         })

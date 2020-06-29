@@ -45,14 +45,6 @@ bot.on('message', function(message){
                 birthdayCtrl.deleteBirthday(message, messageSplit[2]);
             }
         }
-        //Route confirmation delete
-        /*else if(messageSplit[1] === 'supprimerOui'){
-            const pendingDelete = pendingDeletes.find(function(obj){
-                return obj.client === message.author.id;
-            });
-            message.reply(pendingDelete.client + ' / ' + pendingDelete.target);
-            message.reply('L\'anniversaire de ' + pendingDelete.target + ' a bien été supprimer');
-        }*/
         //Route edit
         else if(messageSplit[1] === 'modifier'){
             if(checkCommandParam.guard(message, messageSplit, 4) && checkDate.guard(message, messageSplit[3])){
@@ -61,7 +53,6 @@ bot.on('message', function(message){
         }
         else if(messageSplit[1] === 'channel'){
             birthdayChannelCtrl.register(message);
-            //birthdayChannelCtrl.dump(message);
         }
         //Route help
         else if(messageSplit[1] === 'help'){
@@ -75,10 +66,10 @@ bot.on('message', function(message){
                 '!annivBot liste [pseudo] : Liste l\'anniversaire de [pseudo] \n' +
                 '!annivBot supprimer [pseudo] : Supprime [pseudo] de la liste d\'anniversaire \n');
         }
-        else if(messageSplit[1] === 'dump'){
+        /*else if(messageSplit[1] === 'dump'){
             message.reply(message.guild.roles);
             //birthdayTimerCtrl.dailyTimer();
-        }
+        }*/
         else{
             message.reply('Je ne connais pas cette commande, écris "!annivBot help" afin d\'avoir de l\'aide ');
         }
