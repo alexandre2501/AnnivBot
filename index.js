@@ -62,7 +62,7 @@ bot.on('message', function(message){
                     'Voici les commandes disponibles \n ' +
                     '!annivBot help : Affiche les commandes disponibles \n ' +
                     '!annivBot ajout [pseudo] [jour/mois] : Ajoute [pseudo] à la liste d\'anniversaire \n ' +
-                    '!annivBot channel : Permet d\'associer le canal en question au bot afin de souhaiter un bon anniversaire.' +
+                    '!annivBot channel : Permet d\'associer le canal en question au bot afin de souhaiter un bon anniversaire. \n' +
                     '!annivBot modifier [pseudo] [jour/mois] : Modifie l\'anniversaire de [pseudo] \n' +
                     '!annivBot listeTous : Liste tous les annivresaires du serveur \n' +
                     '!annivBot liste [pseudo] : Liste l\'anniversaire de [pseudo] \n' +
