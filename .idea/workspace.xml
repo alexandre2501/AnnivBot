@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a3cd6373-34d0-4723-b70a-466a2be42abb" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/birthday.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/birthday.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/birthdayChannel.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/birthdayChannel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/birthdayTimer.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/birthdayTimer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,16 +28,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="birthdayTimer.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="birthdayTimer.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/birthdayTimer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="39" column="32" lean-forward="true" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+            <state relative-caret-position="256">
+              <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="birthdayChannel.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="birthdayChannel.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/birthdayChannel.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="294">
@@ -134,8 +132,8 @@
         <option value="$PROJECT_DIR$/models/Birthday.js" />
         <option value="$PROJECT_DIR$/models/BirthdayChannel.js" />
         <option value="$PROJECT_DIR$/controllers/birthday.js" />
-        <option value="$PROJECT_DIR$/controllers/birthdayTimer.js" />
         <option value="$PROJECT_DIR$/controllers/birthdayChannel.js" />
+        <option value="$PROJECT_DIR$/controllers/birthdayTimer.js" />
       </list>
     </option>
   </component>
@@ -228,7 +226,7 @@
       <workItem from="1593255442647" duration="9465000" />
       <workItem from="1593341318513" duration="2569000" />
       <workItem from="1593346561304" duration="19464000" />
-      <workItem from="1593425458542" duration="5316000" />
+      <workItem from="1593425458542" duration="8523000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1593347325196</created>
@@ -307,11 +305,25 @@
       <option name="project" value="LOCAL" />
       <updated>1593429453000</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="methods to wish today bday in all the server =&gt; fix if server has not registered a channel">
+      <created>1593432463086</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1593432463086</updated>
+    </task>
+    <task id="LOCAL-00013" summary="octals fix">
+      <created>1593441927906</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1593441927906</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46341000" />
+    <option name="totallyTimeSpent" value="49548000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -392,7 +404,9 @@
     <MESSAGE value="modifying id type to String" />
     <MESSAGE value="ctrl of the daily interval" />
     <MESSAGE value="methods to wish today bday in all the server" />
-    <option name="LAST_COMMIT_MESSAGE" value="methods to wish today bday in all the server" />
+    <MESSAGE value="methods to wish today bday in all the server =&gt; fix if server has not registered a channel" />
+    <MESSAGE value="octals fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="octals fix" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/models/BirthdayChannel.js">
@@ -589,13 +603,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/middleware/normalizeDate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="37" lean-forward="true" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -613,13 +620,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/birthday.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="470">
@@ -627,17 +627,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/birthdayTimer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="39" column="32" lean-forward="true" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/birthdayChannel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="38" column="42" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/middleware/normalizeDate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="37" lean-forward="true" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/birthdayTimer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
         </state>
       </provider>
     </entry>

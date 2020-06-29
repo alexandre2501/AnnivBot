@@ -1,9 +1,12 @@
 const birthdayChannelCtrl = require('../controllers/birthdayChannel');
 
+const normalizeDate = require('../middleware/normalizeDate')
+
 exports.Time = {
     now: null,
     midnight: null,
     hourTillMidnight: null,
+    dateStr: null,
     updateDate: () => {
         this.Time.now = new Date();
         this.Time.midnight = new Date();
@@ -12,6 +15,9 @@ exports.Time = {
         this.Time.midnight.setHours(24);
         this.Time.midnight.setMinutes(1);
         this.Time.midnight.setSeconds(0);
+        var month = this.Time.midnight.getMonth() + 1;
+        this.Time.dateStr = this.Time.midnight.getDate() + '/' + month;
+        this.Time.dateStr = normalizeDate.normalize(this.Time.dateStr);
     }
 }
 
@@ -25,17 +31,20 @@ exports.dailyTimer = (bot) => {
 
     const timestampTillMidnight = this.Time.midnight.getTime() - this.Time.now.getTime();
     let month = this.Time.midnight.getMonth() + 1
-    let dateStr = this.Time.midnight.getDate() + '/' + month;
+    //let dateStr = this.Time.midnight.getDate() + '/' + month;
     var self = this
     setTimeout(function(){
+        console.log("timeOut end")
         for(index in serversId){
-            birthdayChannelCtrl.getRegisteredChannel(bot, serversId[index], '29/06'/*dateStr*/)
+            birthdayChannelCtrl.getRegisteredChannel(bot, serversId[index], self.Time.dateStr)
             self.Time.updateDate();
-            console.log(self.Time)
         }
         setInterval(function(){
-            birthdayChannelCtrl.getRegisteredChannel(bot, serversId[index], '29/06'/*dateStr*/)
-            self.Time.updateDate();
+            console.log('interval start')
+            for(index in serversId){
+                birthdayChannelCtrl.getRegisteredChannel(bot, serversId[index], self.Time.dateStr)
+                self.Time.updateDate();
+            }
         }, 86400000)
         }, timestampTillMidnight);
 }
