@@ -73,10 +73,14 @@ exports.listTodayServerBirthday = (bot, serverId, date, channel) => {
         .then(birthdays => {
             for(birthday of birthdays){
                 if(channel != false){
-                    bot.guilds.cache.get(serverId).channels.cache.get(channel).send('@everyone Aujourd\'hui c\'est l\'anniversaire de ' + birthday.pseudo + ' ! Bon anniversaire !');
+                    bot.guilds.cache.get(serverId).channels.cache.get(channel).send('@everyone :partying_face: Aujourd\'hui c\'est l\'anniversaire de ' + birthday.pseudo + ' ! Bon anniversaire ! :partying_face:')
+                        .then(reply => {reply.react('🥳');reply.react('🍰');reply.react('👏')})
+                        .catch(error => {console.log(error)});
                 }
                 else{
-                    bot.guilds.cache.get(serverId).channels.cache.find(channel => channel.type === 'text').send('@everyone Aujourd\'hui c\'est l\'anniversaire de ' + birthday.pseudo + ' ! Bon anniversaire !');
+                    bot.guilds.cache.get(serverId).channels.cache.find(channel => channel.type === 'text').send('@everyone :partying_face: Aujourd\'hui c\'est l\'anniversaire de ' + birthday.pseudo + ' ! Bon anniversaire ! :partying_face:')
+                        .then(reply => {reply.react('🥳');reply.react('🍰');reply.react('👏')})
+                        .catch(error => {console.log(error)});
                 }
             }
         })
