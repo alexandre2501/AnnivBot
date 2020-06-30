@@ -3,7 +3,7 @@ exports.guard = (message, array, length) => {
         return true;
     }
     else{
-        message.reply('Erreur: Les paramètres fournis ne conviennet pas. Utilise !annivBot help pour plus d\'infos.');
+        message.reply('Erreur: Les paramètres fournis ne conviennet pas. Utilise !bdayBot help pour plus d\'infos.');
         return false;
     }
 }

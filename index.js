@@ -25,7 +25,7 @@ bot.on('ready', function () {
 bot.on('message', function(message){
     const messageSplit = message.content.split(' ');
     if(checkDirectMessage.guard(message)){
-        if(messageSplit[0] === '!annivBot'){
+        if(messageSplit[0] === '!bdayBot'){
             //Route add
             if(messageSplit[1] === 'ajout'){
                 if(checkCommandParam.guard(message, messageSplit, 4)){
@@ -59,20 +59,20 @@ bot.on('message', function(message){
             //Route help
             else if(messageSplit[1] === 'help'){
                 message.reply('' +
-                    'Voici les commandes disponibles \n ' +
-                    '!annivBot help : Affiche les commandes disponibles \n ' +
-                    '!annivBot ajout [pseudo] [jour/mois] : Ajoute [pseudo] à la liste d\'anniversaire \n ' +
-                    '!annivBot channel : Permet d\'associer le canal en question au bot afin de souhaiter un bon anniversaire. \n' +
-                    '!annivBot modifier [pseudo] [jour/mois] : Modifie l\'anniversaire de [pseudo] \n' +
-                    '!annivBot listeTous : Liste tous les annivresaires du serveur \n' +
-                    '!annivBot liste [pseudo] : Liste l\'anniversaire de [pseudo] \n' +
-                    '!annivBot supprimer [pseudo] : Supprime [pseudo] de la liste d\'anniversaire \n');
+                    '```Voici les commandes disponibles : ```' +
+                    '```!bdayBot help : Affiche les commandes disponibles ``` ' +
+                    '```!bdayBot ajout [pseudo] [jour/mois] : Ajoute [pseudo] à la liste d\'anniversaire ``` ' +
+                    '```!bdayBot channel : Permet d\'associer le canal en question au bot afin de souhaiter un bon anniversaire. ```' +
+                    '```!bdayBot modifier [pseudo] [jour/mois] : Modifie l\'anniversaire de [pseudo] ```' +
+                    '```!bdayBot listeTous : Liste tous les annivresaires du serveur ```' +
+                    '```!bdayBot liste [pseudo] : Liste l\'anniversaire de [pseudo] ```' +
+                    '```!bdayBot supprimer [pseudo] : Supprime [pseudo] de la liste d\'anniversaire ```');
             }
             else if(messageSplit[1] === 'dump'){
                 console.log(message.channel.type)
             }
             else{
-                message.reply('Je ne connais pas cette commande, écris "!annivBot help" afin d\'avoir de l\'aide ');
+                message.reply('Je ne connais pas cette commande, écris "!bdayBot help" afin d\'avoir de l\'aide ');
             }
         }
     }
