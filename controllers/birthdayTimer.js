@@ -37,6 +37,7 @@ exports.dailyTimer = (bot) => {
         console.log("timeOut end")
         for(index in serversId){
             birthdayChannelCtrl.getRegisteredChannel(bot, serversId[index], self.Time.dateStr)
+            console.log(self.Time.dateStr)
             self.Time.updateDate();
         }
         setInterval(function(){

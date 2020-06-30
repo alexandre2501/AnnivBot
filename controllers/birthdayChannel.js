@@ -5,7 +5,6 @@ const birthdayCtrl = require('../controllers/birthday');
 exports.register = (message) => {
     BirthdayChannel.countDocuments({serverId: message.channel.guild.id})
         .then(count => {
-            message.reply(message.channel.id + ' / ' + message.channel.guild.id)
             if(count === 0){
                 const birthdayChannel = new BirthdayChannel({
                     serverId: message.channel.guild.id,
