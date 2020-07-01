@@ -20,7 +20,7 @@ exports.createBirthday = (message, pseudo, date) => {
 exports.modifyBirthday = (message, pseudo, date) => {
     date = normalizeDate.normalize(date);
     Birthday.updateOne({ serverId: message.channel.guild.id, pseudo: pseudo}, {date: date})
-        .then(birthday => {message.reply('L\'anniversaire de ' + pseudo + ' à été changé !')})
+        .then(birthday => {message.reply('L\'anniversaire de ' + pseudo + ' a été changé !')})
         .catch(error => {message.reply('Une erreur est survenue')})
 }
 
