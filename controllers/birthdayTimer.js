@@ -30,23 +30,25 @@ exports.dailyTimer = (bot) => {
     let serversId = bot.guilds.cache.keyArray();
 
     const timestampTillMidnight = this.Time.midnight.getTime() - this.Time.now.getTime();
+    console.log(timestampTillMidnight);
     let month = this.Time.midnight.getMonth() + 1
     //let dateStr = this.Time.midnight.getDate() + '/' + month;
-    var self = this
+    var self = this;
     setTimeout(function(){
         console.log("timeOut end")
         for(index in serversId){
-            birthdayChannelCtrl.getRegisteredChannel(bot, serversId[index], self.Time.dateStr)
             console.log(self.Time.dateStr)
-            self.Time.updateDate();
+            birthdayChannelCtrl.getRegisteredChannel(bot, serversId[index], self.Time.dateStr)
         }
+        self.Time.updateDate();
         setInterval(function(){
             console.log('interval start')
             for(index in serversId){
                 birthdayChannelCtrl.getRegisteredChannel(bot, serversId[index], self.Time.dateStr)
-                self.Time.updateDate();
             }
+            self.Time.updateDate();
         }, 86400000)
         }, timestampTillMidnight);
+
 }
 
