@@ -59,10 +59,11 @@ exports.listOneBirthday = (message, pseudo) => {
 exports.listAllBirthday = (message) => {
     Birthday.find({ serverId: message.channel.guild.id})
         .then(birthdays => {
-            let str = '';
+            let str = 'Voici les anniversaires de tous les utilisateurs enregistrés : ';
             for(birthday of birthdays){
                 str += birthday.pseudo + ' : ' + birthday.date + ' | ';
             }
+            str = str.substr(0, str.length - 2);
             message.reply(str);
         })
         .catch(error => {message.reply('Une erreur est survenue')})
