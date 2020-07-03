@@ -61,12 +61,13 @@ bot.on('message', function(message){
                 message.reply('' +
                     '```Voici les commandes disponibles : ```' +
                     '```!bdayBot help : Affiche les commandes disponibles ``` ' +
-                    '```!bdayBot ajout [pseudo] [jour/mois] : Ajoute [pseudo] à la liste d\'anniversaires ``` ' +
+                    '```!bdayBot ajoute [pseudo] [jour/mois] : Ajoute [pseudo] à la liste d\'anniversaires ``` ' +
                     '```!bdayBot channel : Permet d\'associer le canal en question au bot afin de souhaiter un bon anniversaire. ```' +
                     '```!bdayBot modifier [pseudo] [jour/mois] : Modifie l\'anniversaire de [pseudo] ```' +
                     '```!bdayBot listeTous : Liste tous les annivresaires du serveur ```' +
                     '```!bdayBot liste [pseudo] : Liste l\'anniversaire de [pseudo] ```' +
-                    '```!bdayBot supprimer [pseudo] : Supprime [pseudo] de la liste d\'anniversaires ```');
+                    '```!bdayBot supprimer [pseudo] : Supprime [pseudo] de la liste d\'anniversaires ```' +
+                    '```Les mots entre crochet indiquent un paramètre variable. ```');
             }
             /*else if(messageSplit[1] === 'dump'){
                 console.log(message.channel.type)
