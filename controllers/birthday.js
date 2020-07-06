@@ -6,22 +6,37 @@ const normalizeDate = require('../middleware/normalizeDate');
 exports.createBirthday = (message, pseudo, date) => {
     //delete req.body._id;
     date = normalizeDate.normalize(date);
-    const birthday = new Birthday({
-        userId: message.author.id,
-        serverId: message.channel.guild.id,
-        pseudo: pseudo,
-        date: date,
-    });
-    birthday.save()
-        .then(() => {message.reply('L\'anniversaire de ' + pseudo + ' a bien été ajouté pour le ' + date + '.')})
-        .catch(error => {console.log('erreur')});
+    if(pseudo.length > 30){
+        message.reply('Le pseudo ne doit pas dépasser 30 caractères.')
+    }
+    else{
+        const birthday = new Birthday({
+            userId: message.author.id,
+            serverId: message.channel.guild.id,
+            pseudo: pseudo,
+            date: date,
+        });
+        birthday.save()
+            .then(() => {message.reply('L\'anniversaire de ' + pseudo + ' a bien été ajouté pour le ' + date + '.')})
+            .catch(error => {console.log('erreur')});
+    }
 }
 
 exports.modifyBirthday = (message, pseudo, date) => {
     date = normalizeDate.normalize(date);
-    Birthday.updateOne({ serverId: message.channel.guild.id, pseudo: pseudo}, {date: date})
-        .then(birthday => {message.reply('L\'anniversaire de ' + pseudo + ' a été changé !')})
+    Birthday.countDocuments({serverId: message.channel.guild.id, pseudo: pseudo})
+        .then(count => {
+            if (count > 0) {
+                Birthday.updateOne({ serverId: message.channel.guild.id, pseudo: pseudo}, {date: date})
+                    .then(birthday => {message.reply('L\'anniversaire de ' + pseudo + ' a été changé !')})
+                    .catch(error => {message.reply('Une erreur est survenue')})
+            }
+            else {
+                message.reply('Cet utilisateur n\'a pas encore entré d\'anniversaire ou n\'existe pas.');
+            }
+        })
         .catch(error => {message.reply('Une erreur est survenue')})
+
 }
 
 exports.deleteBirthday = (message, pseudo) => {

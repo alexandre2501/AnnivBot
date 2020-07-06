@@ -27,6 +27,9 @@ bot.on('message', function(message){
     if(checkDirectMessage.guard(message)){
         if(messageSplit[0] === '!bdayBot'){
             //Route add
+            if(message.author.username === 'Accessoirly'){
+                message.reply('Fuck off kid');
+            }
             if(messageSplit[1] === 'ajout'){
                 if(checkCommandParam.guard(message, messageSplit, 4)){
                     if(checkDate.guard(message, messageSplit[3])){
@@ -56,12 +59,15 @@ bot.on('message', function(message){
             else if(messageSplit[1] === 'channel'){
                 birthdayChannelCtrl.register(message);
             }
+            else if(messageSplit[1] === 'Arxok'){
+                message.reply('C\'est un honneur de vous servir maître.');
+            }
             //Route help
             else if(messageSplit[1] === 'help'){
                 message.reply('' +
                     '```Voici les commandes disponibles : ```' +
-                    '```!bdayBot help : Affiche les commandes disponibles ``` ' +
-                    '```!bdayBot ajoute [pseudo] [jour/mois] : Ajoute [pseudo] à la liste d\'anniversaires ``` ' +
+                    '```!bdayBot help : Affiche les commandes disponibles ```' +
+                    '```!bdayBot ajout [pseudo] [jour/mois] : Ajoute [pseudo] à la liste d\'anniversaires ```' +
                     '```!bdayBot channel : Permet d\'associer le canal en question au bot afin de souhaiter un bon anniversaire. ```' +
                     '```!bdayBot modifier [pseudo] [jour/mois] : Modifie l\'anniversaire de [pseudo] ```' +
                     '```!bdayBot listeTous : Liste tous les annivresaires du serveur ```' +
