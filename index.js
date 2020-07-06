@@ -19,6 +19,7 @@ mongoose.connect(env.mongoDbLogin() ,
 
 bot.on('ready', function () {
     console.log("Je suis connecté !")
+    bot.user.setActivity('!bdayBot help', {type:'PLAYING'});
     birthdayTimerCtrl.dailyTimer(bot);
 });
 
