@@ -10,15 +10,24 @@ exports.createBirthday = (message, pseudo, date) => {
         message.reply('Le pseudo ne doit pas dépasser 30 caractères.')
     }
     else{
-        const birthday = new Birthday({
-            userId: message.author.id,
-            serverId: message.channel.guild.id,
-            pseudo: pseudo,
-            date: date,
-        });
-        birthday.save()
-            .then(() => {message.reply('L\'anniversaire de ' + pseudo + ' a bien été ajouté pour le ' + date + '.')})
-            .catch(error => {console.log('erreur')});
+        Birthday.countDocuments({serverId: message.channel.guild.id, pseudo: pseudo})
+            .then(count => {
+                if(count > 0){
+                    message.reply('Cet utilisateur éxiste déjà, utilisez !bdayBot modifier ' + pseudo + ' ' + date + ' si vous souhaitez modifier son anniversaire.')
+                }
+                else{
+                    const birthday = new Birthday({
+                        userId: message.author.id,
+                        serverId: message.channel.guild.id,
+                        pseudo: pseudo,
+                        date: date,
+                    });
+                    birthday.save()
+                        .then(() => {message.reply('L\'anniversaire de ' + pseudo + ' a bien été ajouté pour le ' + date + '.')})
+                        .catch(error => {console.log('erreur')});
+                }
+            })
+            .catch(error => {message.reply('Une erreur est survenue.')});
     }
 }
 
