@@ -28,6 +28,7 @@ exports.dailyTimer = (bot) => {
 
     //console.log(bot.guilds.cache.get('725380428680265778').channels.cache.get('725380428680265781'))
     let serversId = bot.guilds.cache.keyArray();
+    console.log(serversId);
 
     const timestampTillMidnight = this.Time.midnight.getTime() - this.Time.now.getTime();
     console.log(timestampTillMidnight);

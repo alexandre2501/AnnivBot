@@ -1,4 +1,4 @@
-.env.js*
+env.js*
 .idea*
 /node_modules*
 aws_package.zip*

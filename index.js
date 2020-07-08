@@ -4,7 +4,7 @@ const bot = new Discord.Client()
 const birthdayCtrl = require('./controllers/birthday');
 const birthdayChannelCtrl = require('./controllers/birthdayChannel');
 const birthdayTimerCtrl = require('./controllers/birthdayTimer')
-const env = require('./.env');
+const env = require('./env');
 
 //MIDLLEWARE
 const checkDate = require('./middleware/checkDate');
