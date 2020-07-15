@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3cd6373-34d0-4723-b70a-466a2be42abb" name="Default" comment="added a status for the bot user">
-      <change afterPath="$PROJECT_DIR$/env.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/birthdayTimer.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/birthdayTimer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,56 +15,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="package-lock.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package-lock.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="29" column="18" lean-forward="true" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="env.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/env.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="62" column="49" selection-start-line="62" selection-start-column="49" selection-end-line="62" selection-end-column="49" />
+            <state relative-caret-position="192">
+              <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="checkCommandParam.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/middleware/checkCommandParam.js">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="5" column="115" selection-start-line="5" selection-start-column="115" selection-end-line="5" selection-end-column="115" />
+            <state relative-caret-position="48">
+              <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="checkDate.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/middleware/checkDate.js">
+      <file leaf-file-name="birthdayChannel.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/birthdayChannel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-              <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-              <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-              <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+            <state relative-caret-position="512">
+              <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -72,17 +45,35 @@
       <file leaf-file-name="birthday.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/birthday.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
-              <caret line="60" column="4" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="4" />
+            <state relative-caret-position="16">
+              <caret line="29" column="68" selection-start-line="29" selection-start-column="68" selection-end-line="29" selection-end-column="68" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Birthday.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/Birthday.js">
+      <file leaf-file-name="birthdayTimer.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/controllers/birthdayTimer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="9" selection-end-column="60" />
+            <state relative-caret-position="471">
+              <caret line="56" column="60" selection-start-line="56" selection-start-column="60" selection-end-line="56" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="checkDirectMessage.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/middleware/checkDirectMessage.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="32">
+              <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="checkCommandParam.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/middleware/checkCommandParam.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -134,11 +125,11 @@
         <option value="$PROJECT_DIR$/middleware/checkDirectMessage.js" />
         <option value="$PROJECT_DIR$/controllers/birthday.js" />
         <option value="$PROJECT_DIR$/.env.js" />
-        <option value="$PROJECT_DIR$/controllers/birthdayTimer.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/reboot.sh" />
         <option value="$PROJECT_DIR$/env.js" />
         <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/controllers/birthdayTimer.js" />
       </list>
     </option>
   </component>
@@ -456,7 +447,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96648000" />
+    <option name="totallyTimeSpent" value="98266000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -485,14 +476,26 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TypeScript" order="7" weight="0.3297062" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Remote Host" order="4" weight="0.35660982" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09115139" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3297062" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3297062" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.3297062" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.22089228" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.22633298" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -528,7 +531,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update gitignore 3" />
     <MESSAGE value="new model for registering a channel to wish bday" />
     <MESSAGE value="route for registering a channel + ctrl" />
     <MESSAGE value="added a fix for date" />
@@ -553,7 +555,8 @@
     <MESSAGE value="limit to 30 char for pseudo + cheching if user exist when modifying bday" />
     <MESSAGE value="checking if user exists when creating bday" />
     <MESSAGE value="added a status for the bot user" />
-    <option name="LAST_COMMIT_MESSAGE" value="added a status for the bot user" />
+    <MESSAGE value="added a secret command" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a secret command" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/controllers/birthdayTimer.js">
@@ -710,7 +713,7 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
-          <caret line="3" column="16" lean-forward="true" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -721,13 +724,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/birthdayTimer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/middleware/checkDirectMessage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
@@ -735,17 +731,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reboot.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/reboot.sh" />
     <entry file="file://$PROJECT_DIR$/middleware/checkCommandParam.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="115" selection-start-line="5" selection-start-column="115" selection-end-line="5" selection-end-column="115" />
+        <state relative-caret-position="128">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -763,13 +753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="9" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/birthday.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="60" column="4" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -791,10 +774,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/birthday.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="29" column="68" selection-start-line="29" selection-start-column="68" selection-end-line="29" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="62" column="49" selection-start-line="62" selection-start-column="49" selection-end-line="62" selection-end-column="49" />
+        <state relative-caret-position="192">
+          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/birthdayTimer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="56" column="60" selection-start-line="56" selection-start-column="60" selection-end-line="56" selection-end-column="60" />
         </state>
       </provider>
     </entry>

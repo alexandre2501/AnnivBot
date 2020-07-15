@@ -19,7 +19,7 @@ mongoose.connect(env.mongoDbLogin() ,
 
 bot.on('ready', function () {
     console.log("Je suis connecté !")
-    bot.user.setActivity('!bdayBot help', {type:'PLAYING'});
+    birthdayTimerCtrl.statusTimer(bot);
     birthdayTimerCtrl.dailyTimer(bot);
 });
 
@@ -28,9 +28,6 @@ bot.on('message', function(message){
     if(checkDirectMessage.guard(message)){
         if(messageSplit[0] === '!bdayBot'){
             //Route add
-            if(message.author.username === 'Accessoirly'){
-                message.reply('Fuck off kid');
-            }
             if(messageSplit[1] === 'ajout'){
                 if(checkCommandParam.guard(message, messageSplit, 4)){
                     if(checkDate.guard(message, messageSplit[3])){

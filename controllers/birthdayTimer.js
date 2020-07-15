@@ -42,7 +42,7 @@ exports.dailyTimer = (bot) => {
             birthdayChannelCtrl.getRegisteredChannel(bot, serversId[index], self.Time.dateStr)
         }
         self.Time.updateDate();
-        setInterval(function(){
+        setInterval(() => {
             console.log('interval start')
             for(index in serversId){
                 birthdayChannelCtrl.getRegisteredChannel(bot, serversId[index], self.Time.dateStr)
@@ -51,5 +51,13 @@ exports.dailyTimer = (bot) => {
         }, 86400000)
         }, timestampTillMidnight);
 
+}
+
+exports.statusTimer = (bot) => {
+    bot.user.setActivity('!bdayBot help', {type:'PLAYING'});
+    setInterval(() =>{
+        bot.user.setActivity('!bdayBot help', {type:'PLAYING'});
+        console.log('timestam')
+    }, 3600000)
 }
 
