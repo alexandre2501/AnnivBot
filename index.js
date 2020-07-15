@@ -61,7 +61,12 @@ bot.on('message', function(message){
                 birthdayChannelCtrl.register(message);
             }
             else if(messageSplit[1] === 'Arxok'){
-                message.reply('C\'est un honneur de vous servir maître.');
+                if(message.author.id == '225959087123333120'){
+                    message.reply('C\'est un honneur de vous servir maître.');
+                }
+                else{
+                    message.reply('T\'es qui toi ?');
+                }
             }
             //Route help
             else if(messageSplit[1] === 'help'){
