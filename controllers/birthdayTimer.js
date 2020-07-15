@@ -57,7 +57,6 @@ exports.statusTimer = (bot) => {
     bot.user.setActivity('!bdayBot help', {type:'PLAYING'});
     setInterval(() =>{
         bot.user.setActivity('!bdayBot help', {type:'PLAYING'});
-        console.log('timestam')
     }, 3600000)
 }
 
