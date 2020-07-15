@@ -96,24 +96,35 @@ exports.listAllBirthday = (message) => {
 exports.listTodayServerBirthday = (bot, serverId, date, channel) => {
     Birthday.find({serverId: serverId, date: date})
         .then(birthdays => {
+            var birthdaysStr = '';
+            if(birthdays.length == 0){
+                return;
+            }
             for(birthday of birthdays){
-                if(channel != false){
-                    if(bot.guilds.cache.get(serverId).channels.cache.get(channel) === undefined){
-                        bot.guilds.cache.get(serverId).channels.cache.find(channel => channel.type === 'text').send('@everyone :partying_face: Aujourd\'hui c\'est l\'anniversaire de ' + birthday.pseudo + ' ! Bon anniversaire ! :partying_face:')
-                            .then(reply => {reply.react('🥳');reply.react('🍰');reply.react('👏')})
-                            .catch(error => {console.log(error)});
-                    }
-                    else{
-                        bot.guilds.cache.get(serverId).channels.cache.get(channel).send('@everyone :partying_face: Aujourd\'hui c\'est l\'anniversaire de ' + birthday.pseudo + ' ! Bon anniversaire ! :partying_face:')
-                            .then(reply => {reply.react('🥳');reply.react('🍰');reply.react('👏')})
-                            .catch(error => {console.log(error)});
-                    }
+                if(birthday.pseudo == birthdays[birthdays.length - 2].pseudo){
+                    birthdaysStr += birthday.pseudo + ' et ';
                 }
                 else{
-                    bot.guilds.cache.get(serverId).channels.cache.find(channel => channel.type === 'text').send('@everyone :partying_face: Aujourd\'hui c\'est l\'anniversaire de ' + birthday.pseudo + ' ! Bon anniversaire ! :partying_face:')
+                    birthdaysStr += birthday.pseudo + ', ';
+                }
+            }
+            birthdaysStr = birthdaysStr.substr(0, birthdaysStr.length - 2);
+            if(channel != false){
+                if(bot.guilds.cache.get(serverId).channels.cache.get(channel) === undefined){
+                    bot.guilds.cache.get(serverId).channels.cache.find(channel => channel.type === 'text').send('@everyone :partying_face: Aujourd\'hui c\'est l\'anniversaire de ' + birthdaysStr + ' ! Bon anniversaire ! :partying_face:')
                         .then(reply => {reply.react('🥳');reply.react('🍰');reply.react('👏')})
                         .catch(error => {console.log(error)});
                 }
+                else{
+                    bot.guilds.cache.get(serverId).channels.cache.get(channel).send('@everyone :partying_face: Aujourd\'hui c\'est l\'anniversaire de ' + birthdaysStr + ' ! Bon anniversaire ! :partying_face:')
+                        .then(reply => {reply.react('🥳');reply.react('🍰');reply.react('👏')})
+                        .catch(error => {console.log(error)});
+                }
+            }
+            else{
+                bot.guilds.cache.get(serverId).channels.cache.find(channel => channel.type === 'text').send('@everyone :partying_face: Aujourd\'hui c\'est l\'anniversaire de ' + birthdaysStr + ' ! Bon anniversaire ! :partying_face:')
+                    .then(reply => {reply.react('🥳');reply.react('🍰');reply.react('👏')})
+                    .catch(error => {console.log(error)});
             }
         })
         .catch(error => {console.log(error)})
