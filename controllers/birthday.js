@@ -109,20 +109,27 @@ exports.listTodayServerBirthday = (bot, serverId, date, channel) => {
                 }
             }
             birthdaysStr = birthdaysStr.substr(0, birthdaysStr.length - 2);
+            var message;
+            if(birthdays.length == 1){
+                message = '@everyone :partying_face: Aujourd\'hui c\'est l\'anniversaire de ' + birthdaysStr + ' ! Bon anniversaire ! :partying_face:';
+            }
+            else{
+                message = '@everyone :partying_face: Aujourd\'hui c\'est l\'anniversaire de ' + birthdaysStr + ' ! Bons anniversaires ! :partying_face:';
+            }
             if(channel != false){
                 if(bot.guilds.cache.get(serverId).channels.cache.get(channel) === undefined){
-                    bot.guilds.cache.get(serverId).channels.cache.find(channel => channel.type === 'text').send('@everyone :partying_face: Aujourd\'hui c\'est l\'anniversaire de ' + birthdaysStr + ' ! Bon anniversaire ! :partying_face:')
+                    bot.guilds.cache.get(serverId).channels.cache.find(channel => channel.type === 'text').send(message)
                         .then(reply => {reply.react('🥳');reply.react('🍰');reply.react('👏')})
                         .catch(error => {console.log(error)});
                 }
                 else{
-                    bot.guilds.cache.get(serverId).channels.cache.get(channel).send('@everyone :partying_face: Aujourd\'hui c\'est l\'anniversaire de ' + birthdaysStr + ' ! Bon anniversaire ! :partying_face:')
+                    bot.guilds.cache.get(serverId).channels.cache.get(channel).send(message)
                         .then(reply => {reply.react('🥳');reply.react('🍰');reply.react('👏')})
                         .catch(error => {console.log(error)});
                 }
             }
             else{
-                bot.guilds.cache.get(serverId).channels.cache.find(channel => channel.type === 'text').send('@everyone :partying_face: Aujourd\'hui c\'est l\'anniversaire de ' + birthdaysStr + ' ! Bon anniversaire ! :partying_face:')
+                bot.guilds.cache.get(serverId).channels.cache.find(channel => channel.type === 'text').send(message)
                     .then(reply => {reply.react('🥳');reply.react('🍰');reply.react('👏')})
                     .catch(error => {console.log(error)});
             }
