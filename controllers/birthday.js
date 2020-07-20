@@ -2,6 +2,7 @@ const Birthday = require('../models/Birthday');
 const birthdayChannelCtrl = require('../controllers/birthdayChannel');
 
 const normalizeDate = require('../middleware/normalizeDate');
+const checkStrLength = require('../middleware/checkStrLength');
 
 exports.createBirthday = (message, pseudo, date) => {
     //delete req.body._id;
@@ -13,7 +14,7 @@ exports.createBirthday = (message, pseudo, date) => {
         Birthday.countDocuments({serverId: message.channel.guild.id, pseudo: pseudo})
             .then(count => {
                 if(count > 0){
-                    message.reply('Cet utilisateur éxiste déjà, utilisez !bdayBot modifier ' + pseudo + ' ' + date + ' si vous souhaitez modifier son anniversaire.')
+                    message.reply('Cet utilisateur existe déjà, utilisez !bdayBot modifier ' + pseudo + ' ' + date + ' si vous souhaitez modifier son anniversaire.')
                 }
                 else{
                     const birthday = new Birthday({
@@ -84,13 +85,27 @@ exports.listAllBirthday = (message) => {
     Birthday.find({ serverId: message.channel.guild.id})
         .then(birthdays => {
             let str = 'Voici les anniversaires de tous les utilisateurs enregistrés : ';
+            let text = '';
+            let bdayListMessage = [];
             for(birthday of birthdays){
-                str += birthday.pseudo + ' : ' + birthday.date + ' | ';
+                text += birthday.pseudo + ' : ' + birthday.date + ' | ';
+                if(text.length > 1500){
+                    text = text.substr(0, text.length - 2);
+                    bdayListMessage.push(text);
+                    text = '';
+                }
             }
+            bdayListMessage.push(text);
+            str += bdayListMessage[0];
             str = str.substr(0, str.length - 2);
             message.reply(str);
+            for(index in bdayListMessage){
+                if(index > 0){
+                    message.reply(bdayListMessage[index]);
+                }
+            }
         })
-        .catch(error => {message.reply('Une erreur est survenue')})
+        .catch(error => {message.reply('Une erreur est survenue'); console.log(error)})
 }
 
 exports.listTodayServerBirthday = (bot, serverId, date, channel) => {
