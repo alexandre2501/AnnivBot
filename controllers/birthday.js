@@ -82,7 +82,7 @@ exports.listOneBirthday = (message, pseudo) => {
 }
 
 exports.listAllBirthday = (message) => {
-    Birthday.find({ serverId: message.channel.guild.id})
+    Birthday.find({ serverId: message.channel.guild.id}).sort({pseudo: 1})
         .then(birthdays => {
             let str = 'Voici les anniversaires de tous les utilisateurs enregistrés : ';
             let text = '';

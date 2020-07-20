@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3cd6373-34d0-4723-b70a-466a2be42abb" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/middleware/checkStrLength.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/birthday.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/birthday.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,8 +43,8 @@
       <file leaf-file-name="birthday.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/birthday.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="92" column="59" selection-start-line="92" selection-start-column="59" selection-end-line="92" selection-end-column="59" />
+            <state relative-caret-position="192">
+              <caret line="84" column="74" selection-start-line="84" selection-start-column="74" selection-end-line="84" selection-end-column="74" />
             </state>
           </provider>
         </entry>
@@ -259,7 +257,7 @@
       <workItem from="1594860067125" duration="8000" />
       <workItem from="1594892521483" duration="241000" />
       <workItem from="1594988577292" duration="606000" />
-      <workItem from="1595236177575" duration="2398000" />
+      <workItem from="1595236177575" duration="2628000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1593347325196</created>
@@ -471,11 +469,25 @@
       <option name="project" value="LOCAL" />
       <updated>1594817937613</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="middleware for checking a str length">
+      <created>1595239162644</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1595239162644</updated>
+    </task>
+    <task id="LOCAL-00032" summary="multiple reply if listeTous string length &gt; 1500">
+      <created>1595239220776</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1595239220776</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106834000" />
+    <option name="totallyTimeSpent" value="107064000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -490,16 +502,17 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09541578" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3297062" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3297062" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.3297062" />
       <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.22633298" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09541578" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.22089228" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.22633298" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TypeScript" order="7" weight="0.3297062" />
@@ -511,7 +524,6 @@
       <window_info anchor="bottom" id="Messages" order="7" weight="0.3297062" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.22089228" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -547,8 +559,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added a fix for date" />
-    <MESSAGE value="modifying id type to String" />
     <MESSAGE value="ctrl of the daily interval" />
     <MESSAGE value="methods to wish today bday in all the server" />
     <MESSAGE value="methods to wish today bday in all the server =&gt; fix if server has not registered a channel" />
@@ -572,7 +582,9 @@
     <MESSAGE value="added a secret command" />
     <MESSAGE value="concatenated message when wishing bday" />
     <MESSAGE value="plurials message when wishing bday" />
-    <option name="LAST_COMMIT_MESSAGE" value="plurials message when wishing bday" />
+    <MESSAGE value="middleware for checking a str length" />
+    <MESSAGE value="multiple reply if listeTous string length &gt; 1500" />
+    <option name="LAST_COMMIT_MESSAGE" value="multiple reply if listeTous string length &gt; 1500" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app.js" />
@@ -805,8 +817,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/birthday.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="92" column="59" selection-start-line="92" selection-start-column="59" selection-end-line="92" selection-end-column="59" />
+        <state relative-caret-position="192">
+          <caret line="84" column="74" selection-start-line="84" selection-start-column="74" selection-end-line="84" selection-end-column="74" />
         </state>
       </provider>
     </entry>
