@@ -24,7 +24,14 @@ bot.on('ready', function () {
 });
 
 bot.on('message', function(message){
-    const messageSplit = message.content.split(' ');
+    let messageSplit = message.content.split(' ');
+    var tempArray = [];
+    for(index in messageSplit){
+        if(messageSplit[index] != ''){
+            tempArray.push(messageSplit[index]);
+        }
+    }
+    messageSplit = tempArray;
     if(checkDirectMessage.guard(message)){
         if(messageSplit[0] === '!bdayBot'){
             //Route add
@@ -79,7 +86,7 @@ bot.on('message', function(message){
                     '```Les mots entre crochet indiquent un paramètre variable. ```');
             }
             /*else if(messageSplit[1] === 'dump'){
-                console.log(message.channel.type)
+                birthdayCtrl.dump(message);
             }*/
             else{
                 message.reply('Je ne connais pas cette commande, écris "!bdayBot help" afin d\'avoir de l\'aide ');
