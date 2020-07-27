@@ -79,7 +79,7 @@ bot.on('message', function(message){
                     '```Les mots entre crochet indiquent un paramètre variable. ```');
             }
             /*else if(messageSplit[1] === 'dump'){
-                console.log(message.channel.type)
+                birthdayCtrl.dump(message);
             }*/
             else{
                 message.reply('Je ne connais pas cette commande, écris "!bdayBot help" afin d\'avoir de l\'aide ');

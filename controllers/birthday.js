@@ -116,14 +116,20 @@ exports.listTodayServerBirthday = (bot, serverId, date, channel) => {
                 return;
             }
             for(birthday of birthdays){
-                if(birthday.pseudo == birthdays[birthdays.length - 2].pseudo){
+                if(birthday.pseudo == birthdays[0].pseudo && birthdays.length <= 2){
                     birthdaysStr += birthday.pseudo + ' et ';
                 }
                 else{
                     birthdaysStr += birthday.pseudo + ', ';
                 }
             }
-            birthdaysStr = birthdaysStr.substr(0, birthdaysStr.length - 2);
+            //si il n'y a qu'un seul anniversaire, le substr doit etre plus grand pour enlever le et
+            if(birthdays.length == 1){
+                birthdaysStr = birthdaysStr.substr(0, birthdaysStr.length - 3);
+            }
+            else{
+                birthdaysStr = birthdaysStr.substr(0, birthdaysStr.length - 2);
+            }
             var message;
             if(birthdays.length == 1){
                 message = '@everyone :partying_face: Aujourd\'hui c\'est l\'anniversaire de ' + birthdaysStr + ' ! Bon anniversaire ! :partying_face:';
@@ -150,4 +156,14 @@ exports.listTodayServerBirthday = (bot, serverId, date, channel) => {
             }
         })
         .catch(error => {console.log(error)})
+}
+
+exports.dump = (message) => {
+    Birthday.find({serverId: '727108166311215114'/*"714115851263148093"*/, pseudo: '<@!225959087123333120>'/*'<@261525253363204099>'*/})
+        .then(birthdays => {
+            for(birthday of birthdays){
+                message.reply(birthday.pseudo + ' test')
+            }
+        })
+        .catch()
 }
