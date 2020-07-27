@@ -24,7 +24,14 @@ bot.on('ready', function () {
 });
 
 bot.on('message', function(message){
-    const messageSplit = message.content.split(' ');
+    let messageSplit = message.content.split(' ');
+    var tempArray = [];
+    for(index in messageSplit){
+        if(messageSplit[index] != ''){
+            tempArray.push(messageSplit[index]);
+        }
+    }
+    messageSplit = tempArray;
     if(checkDirectMessage.guard(message)){
         if(messageSplit[0] === '!bdayBot'){
             //Route add
