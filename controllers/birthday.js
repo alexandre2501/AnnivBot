@@ -80,7 +80,7 @@ exports.cleanInactiveUsers = (message) => {
                     pseudo = pseudo.replace('@', '');
                     message.guild.members.fetch(pseudo)
                         .then(member => {
-                            //console.log(member.user.username)
+                            console.log(member.user.username)
                         })
                         .catch(error => {
                             Birthday.deleteOne({serverId: message.guild.id, pseudo: birthday.pseudo})
