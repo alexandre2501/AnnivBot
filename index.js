@@ -83,10 +83,19 @@ bot.on('message', function(message){
                     '```!bdayBot listeTous : Liste tous les annivresaires du serveur ```' +
                     '```!bdayBot liste [pseudo] : Liste l\'anniversaire de [pseudo] ```' +
                     '```!bdayBot supprimer [pseudo] : Supprime [pseudo] de la liste d\'anniversaires ```' +
+                    '```!bdayBot nettoyer : Supprime tout les utilisateurs inactifs ```' +
                     '```Les mots entre crochet indiquent un paramètre variable. ```');
             }
+            else if(messageSplit[1] === 'nettoyer'){
+                birthdayCtrl.cleanInactiveUsers(message);
+            }
             /*else if(messageSplit[1] === 'dump'){
-                birthdayCtrl.dump(message);
+                message.reply('coucou <@' + 225959087123333120 + '>')
+                console.log(message.guild.members.fetch().then(items => {
+                    for(item of items){
+                        console.log(item[1].user.username.id)
+                    }
+                }))
             }*/
             else{
                 message.reply('Je ne connais pas cette commande, écris "!bdayBot help" afin d\'avoir de l\'aide ');
