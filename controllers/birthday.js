@@ -64,6 +64,36 @@ exports.deleteBirthday = (message, pseudo) => {
         .catch(error => {message.reply('Une erreur est survenue')});
 }
 
+exports.cleanInactiveUsers = (message) => {
+    //On parcours tout les anniversaire du jour défini sur le serveur
+    //On regarde seulement le utilisateur discord
+    //Lorsqu'on trouve un utilisateur dans les anniversaire d'aujourd'hui, on vérifie qu'il est encore sur le serveur
+    //S'il 'nest plus présent, on le supprime
+    Birthday.find({serverId: message.guild.id})
+        .then(birthdays => {
+            for(birthday of birthdays){
+                if(birthday.pseudo[0] === '<' && birthday.pseudo[birthday.pseudo.length - 1] === '>'){
+                    let pseudo = birthday.pseudo
+                    pseudo = pseudo.replace('<', '');
+                    pseudo = pseudo.replace('>', '');
+                    pseudo = pseudo.replace('!', '');
+                    pseudo = pseudo.replace('@', '');
+                    message.guild.members.fetch(pseudo)
+                        .then(member => {
+                            //console.log(member.user.username)
+                        })
+                        .catch(error => {
+                            Birthday.deleteOne({serverId: message.guild.id, pseudo: birthday.pseudo})
+                                .then(birthday => {console.log('test')})
+                                .catch(error => {message.reply('Une erreur est survenue')})
+                        });
+                }
+            }
+        })
+        .catch(error => {message.reply('une erreur est survenue')})
+        .finally(() => {message.reply('Nettoyage terminé')})
+}
+
 exports.listOneBirthday = (message, pseudo) => {
     Birthday.findOne({ serverId: message.channel.guild.id, pseudo: pseudo})
         .then(birthday => {message.reply('L\'anniversaire de cet utilisateur est le ' + birthday.date + '.')})
